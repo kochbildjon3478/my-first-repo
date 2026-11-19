@@ -1,23 +1,16 @@
 class Streamer:
-    def __init__(self, nickname, subscribers):
-        self.nickname = nickname
-        self.subscribers = subscribers
-        self.donates = []   # список сумм донатов
+    # ... твой существующий код (__init__, add_donate, total_donates, average_donate) ...
 
-    def add_donate(self, amount):
-        self.donates.append(amount)
-
-    def total_donates(self):
-        return sum(self.donates)
-
-    def average_donate(self):
-        if len(self.donates) == 0:
-            return 0
-        return self.total_donates() / len(self.donates)
+    def print_stats(self):
+        print(f"Стример: {self.nickname}")
+        print(f"Подписчики: {self.subscribers}")
+        print(f"Всего донатов: {self.total_donates()}")
+        print(f"Средний донат: {self.average_donate()}")
 
 # Создаем тестового стримера
 streamer = Streamer("GolubKin", 1200)
 streamer.add_donate(500)
 streamer.add_donate(150)
 
-print("Код класса Стример загружен")
+# Вызываем функцию для проверки
+streamer.print_stats()
